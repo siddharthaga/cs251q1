@@ -1,0 +1,135 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+
+\usepackage{inputenc}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage[backend=bibtex]{biblatex}
+\bibliography{aut}
+\title{\huge Procedure of multiplication of two-digit numbers.}
+
+\date{6 march 2017}
+\begin{document}
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+\newpage
+\section{Case 1} \label{case 1}
+\noindent Case 1: The first digits are same, and the last ones add up to 10.
+let two two-digit numbers be ``m'' and ``n''\footnote{these are exactly two-digit numbers}.``m'' has ``a'' at tens place and ``b'' at units.``n'' has ``c'' at tens place and ``b'' at units. ``a'' and ``c'' are same and c+d=10\cite{athar}
+
+\noindent step1 : Simply mutiply ``a'' with its successive number \\
+step2 : multiply last digit of both the numbers \\
+step3 : write the numbers obtain in step1 and step2 together to form a new number\\
+
+\noindent Below is the equation and after that its pseudocode
+
+
+\begin{align*}
+	z=a*(a+1)  \\
+	y=b*d \\
+	ans=zy
+	\end{align*}
+\subsection{pseudocode}
+  \begin{algorithm}
+   \caption{multiplication of two-digit numbers: }
+    \begin{algorithmic}[1]
+      \Function{Multiplication}{$m,n$}
+	\State 
+
+	\State Let $z$ , $y$, $a$ and $b$ be an integer
+\State $a=m/10$
+\State $b=m\%10$
+\State $c=n/10$
+\State $d=n\%10$
+\If {$a == c$}
+	\State $z=a*(a+1)$
+	
+	\State $y=b*d$
+	\State $ans=(z*100)+y$ 
+	
+	\EndIf
+	\EndFunction
+\end{algorithmic}
+\end{algorithm}
+\noindent below is an example of \ref{case 1}:
+\newline
+\subsection{example}
+\begin{tabular}{l} 
+66\\
+
+x64\\
+
+6x(6+1):6x4 = 42:24 = 4224\\
+\end{tabular}
+
+\newpage
+\section{Case 2}
+\noindent Case  2: The first digits add up to 10, and the last ones are same.
+let two two-digit numbers be ``m'' and ``n''\footnote{these are exactly two-digit numbers}.``m'' has ``a'' at tens place and ``b'' at units.``n'' has ``c'' at tens place and ``b'' at units. ``a'' and ``c'' are same and c+d=10\cite{Swami}
+
+\noindent step1 : multiply first digit of both the number and add last digit to it \\
+step2 : multiply last digit of both the numbers (which is same as taking square of last digit of any number)\\
+step3 : write the numbers obtain in step1 and step2 together to form a new number\\
+
+\noindent Below is the equation and after that its pseudocode
+
+\begin{align*}
+	z=a*c+d \\
+	y=d*d \\
+	ans=zy
+	\end{align*}
+\subsection{pseudocode}
+  \begin{algorithm}
+   \caption{multiplication of two-digit numbers: }
+    \begin{algorithmic}[1]
+      \Function{Multiplication}{$m,n$}
+\State $a=m/10$
+\State $b=m\%10$
+\State $c=n/10$
+\State $d=n\%10$
+	\If {$b == d$}
+	\State Let $z$ , $y$, $a$ and $b$ be an integer
+	\State $z=a*c+d$
+	
+	\State$y=d*d$
+	\State$ans=(z*100)+y$
+	
+	\EndIf
+	\EndFunction
+\end{algorithmic}
+\end{algorithm}
+\subsection{example}
+\noindent below is an example\footnote{more examples can be found on \url{http://www.quickermaths.com/vedic-multiplication/}}:
+\newline
+\begin{tabular}{l} 
+
+34\\
+
+x74\\
+
+3x7+4:4x4 = 25:16 = 2516\\
+\end{tabular}
+\newpage
+\section{General case}
+In case of three-digit numbers, multiply L.H.S. by 10 in  case 1. generalization of them is not so simple as it contain many other cases which can be found on \url{http://www.quickermaths.com/vedic-multiplication/}
+
+
+%\begin{thebibliography}{9}
+%\bibitem{swawmi} 
+%Swami Bharati Krishna Tirtha 
+%\textit{Vedic Mathematics}. 
+
+%\end{thebibliography}
+ %\bibliographystyle{acm}
+\printbibliography
+%\bibliography{aut}
+\newpage
+\includepdf[lastpage=1]{a7img.pdf}
+
+
+\end{document}
+
